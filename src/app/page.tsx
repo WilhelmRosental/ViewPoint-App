@@ -31,27 +31,13 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
-      <header className="main-header flex flex-row justify-between items-center h-32">
-        <Link href="/" aria-current="page" aria-label="Navigation to homepage">
-          <Image
-            src="/logo.svg"
-            alt="Fisheye Home page"
-            width={96}
-            height={96}
-          />
-        </Link>
-        <h1 className="text-red-700 text-center">Nos photographes</h1>
-      </header>
-
-      <main
-        id="main"
-        className="photographer_section grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 my-20"
-      >
-        {photographers.map((photographer) => (
-          <PhotographerCard key={photographer.id} photographer={photographer} />
-        ))}
-      </main>
+    <div
+      id="main"
+      className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 my-20"
+    >
+      {photographers.map((photographer) => (
+        <PhotographerCard key={photographer.id} photographer={photographer} />
+      ))}
     </div>
   );
 }

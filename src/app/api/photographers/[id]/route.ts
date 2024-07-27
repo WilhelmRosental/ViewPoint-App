@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import photographers from '../../../data/photographers.json';
 
 export async function GET(request: Request, { params }: { params: { id: string } }) {
-  const id = parseInt(params.id, 10);
+  const id = parseInt(params.id);
   const photographer = photographers.photographers.find((p) => p.id === id);
   
   if (photographer) {

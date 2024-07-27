@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
 import Image from "next/image";
+import { Card, Text, Badge, Quote, Heading } from "@radix-ui/themes";
+import Link from "next/link";
 
 type Photographer = {
   name: string;
@@ -12,49 +13,38 @@ type Photographer = {
 };
 
 const PhotographerCard = ({ photographer }: { photographer: Photographer }) => {
-  const [imageSrc, setImageSrc] = useState<string>("");
-
-  useEffect(() => {
-    fetch(`/api/images/${photographer.portrait}`)
-      .then((response) => response.blob())
-      .then((blob) => {
-        const url = URL.createObjectURL(blob);
-        setImageSrc(url);
-      })
-      .catch((error) => console.error("Error fetching image:", error));
-  }, [photographer.portrait]);
-
   return (
-    <div className="user-card flex flex-col items-center p-4 border rounded-lg shadow-md">
-      <header className="user-card__header">
-        <a
-          href={`/photographer/${photographer.id}`}
-          className="user-card__link"
-          role="navigation"
-          aria-label={`Lien vers la page de ${photographer.name}`}
-        >
+    <Link
+      href={`/photographer/${photographer.id}`}
+      className="text-center block"
+      aria-label={`Lien vers la page de ${photographer.name}`}
+    >
+      <Card className="flex flex-col items-center p-0">
+        <div className="relative w-full h-56">
           <Image
-            className="user-card__picture rounded-full"
-            src={require("@/app/data/photographers/" + photographer.portrait)}
+            src={
+              require(`@/app/data/photographers/${photographer.portrait}`)
+                .default
+            }
             alt={`Photo de ${photographer.name}`}
-            width={200}
-            height={200}
+            layout="fill"
+            objectFit="cover"
+            style={{
+              backgroundColor: "var(--gray-5)",
+            }}
           />
-          <h2 className="user-card__name text-red-600 text-2xl mt-4">
-            {photographer.name}
-          </h2>
-        </a>
-      </header>
-      <section className="user-card__paragraph text-center mt-4">
-        <p className="user-card__localization text-gray-600">
-          {photographer.city}, {photographer.country}
-        </p>
-        <p className="user-card__tagline">{photographer.tagline}</p>
-        <p className="user-card__price text-gray-500">
-          {photographer.price}€/jour
-        </p>
-      </section>
-    </div>
+          <Badge variant="surface" className="absolute top-2 left-2 px-2 py-1">
+            {photographer.price}€/jour
+          </Badge>
+        </div>
+        <Text className="text-center mt-4">
+          <Heading as="h3" size="3">
+            {photographer.city}, {photographer.country}
+          </Heading>
+          <Quote>{photographer.tagline}</Quote>
+        </Text>
+      </Card>
+    </Link>
   );
 };
 
