@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <div
       id="main"
-      className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 my-20"
+      className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-20"
     >
       {photographers.map((photographer) => (
         <PhotographerCard key={photographer.id} photographer={photographer} />

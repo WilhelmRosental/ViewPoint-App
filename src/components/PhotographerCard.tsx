@@ -16,10 +16,10 @@ const PhotographerCard = ({ photographer }: { photographer: Photographer }) => {
   return (
     <Link
       href={`/photographer/${photographer.id}`}
-      className="text-center block"
+      className="text-center block h-full"
       aria-label={`Lien vers la page de ${photographer.name}`}
     >
-      <Card className="flex flex-col items-center p-0">
+      <Card className="flex flex-col items-center p-0 h-full">
         <div className="relative w-full h-56">
           <Image
             src={
@@ -37,11 +37,11 @@ const PhotographerCard = ({ photographer }: { photographer: Photographer }) => {
             {photographer.price}€/jour
           </Badge>
         </div>
-        <Text className="text-center mt-4">
+        <Text className="flex flex-col text-center mt-4 grow">
           <Heading as="h3" size="3">
             {photographer.city}, {photographer.country}
           </Heading>
-          <Quote>{photographer.tagline}</Quote>
+          <Quote className="text-base">{photographer.tagline}</Quote>
         </Text>
       </Card>
     </Link>
