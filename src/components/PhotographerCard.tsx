@@ -38,6 +38,9 @@ const PhotographerCard = ({ photographer }: { photographer: Photographer }) => {
           </Badge>
         </div>
         <Text className="flex flex-col text-center mt-4 grow">
+          <Heading as="h2" size="4">
+            {photographer.name}
+          </Heading>
           <Heading as="h3" size="3">
             {photographer.city}, {photographer.country}
           </Heading>
