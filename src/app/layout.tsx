@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Ui/Navbar";
-import { ThemeProvider } from "@/contexts/ThemeProvider";
-import "@radix-ui/themes/styles.css";
+import Footer from "@/components/Ui/Footer";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
@@ -16,10 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ThemeProvider>
+      <body>
         <Navbar />
-        <main className="max-w-6xl mx-auto">{children}</main>
-      </ThemeProvider>
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

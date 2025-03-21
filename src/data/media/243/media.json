@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "photographerId": 243,
+    "title": "Portrait",
+    "image": "Portrait_Nora.jpg",
+    "type": "image",
+    "likes": 12,
+    "date": "2019-05-01",
+    "price": 45
+  },
+  {
+    "id": 2,
+    "photographerId": 243,
+    "title": "Architecture",
+    "image": "Architecture_Horseshoe.jpg",
+    "type": "image",
+    "likes": 52,
+    "date": "2019-05-15",
+    "price": 45
+  },
+  {
+    "id": 3,
+    "photographerId": 243,
+    "title": "Travel",
+    "image": "Travel_Adventure_Door.jpg",
+    "type": "image",
+    "likes": 23,
+    "date": "2019-06-20",
+    "price": 45
+  },
+  {
+    "id": 4,
+    "photographerId": 243,
+    "title": "Sport",
+    "image": "Sport_Gymnast.jpg",
+    "type": "image",
+    "likes": 88,
+    "date": "2019-07-05",
+    "price": 45
+  },
+  {
+    "id": 5,
+    "photographerId": 243,
+    "title": "Animals",
+    "image": "Animals_Rainbow.jpg",
+    "type": "image",
+    "likes": 59,
+    "date": "2019-07-25",
+    "price": 45
+  },
+  {
+    "id": 6,
+    "photographerId": 243,
+    "title": "Travel",
+    "image": "Travel_SunsetonCanals.jpg",
+    "type": "image",
+    "likes": 60,
+    "date": "2019-08-12",
+    "price": 45
+  },
+  {
+    "id": 7,
+    "photographerId": 243,
+    "title": "Portrait",
+    "image": "Portrait_Background.jpg",
+    "type": "image",
+    "likes": 11,
+    "date": "2019-08-24",
+    "price": 45
+  },
+  {
+    "id": 8,
+    "photographerId": 243,
+    "title": "Travel",
+    "image": "Travel_Lonesome.jpg",
+    "type": "image",
+    "likes": 55,
+    "date": "2019-09-03",
+    "price": 45
+  },
+  {
+    "id": 9,
+    "photographerId": 243,
+    "title": "Portrait",
+    "image": "Portrait_Wednesday.jpg",
+    "type": "image",
+    "likes": 34,
+    "date": "2019-09-20",
+    "price": 45
+  }
+]

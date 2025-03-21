@@ -1,0 +1,111 @@
+[
+  {
+    "id": 243,
+    "firstname": "Sophie",
+    "lastname": "Dubois",
+    "title": "Photographe Professionnel - Portrait & Événements",
+    "recommendations": 8,
+    "city": "Paris",
+    "bio": "Photographe professionnelle passionnée avec plus de 8 ans d'expérience dans la capture de moments uniques. Spécialisée dans les portraits, mariages et événements, j'apporte une approche créative et personnalisée à chaque projet. Équipée de matériel professionnel haut de gamme, je m'engage à livrer des images de qualité exceptionnelle qui racontent votre histoire. Basée à Paris, je me déplace dans toute la France pour vos projets. Mon approche combine technique professionnelle et sensibilité artistique pour créer des images authentiques qui capturent l'essence de chaque moment.",
+    "tags": [
+      "Portrait",
+      "Mariage",
+      "Événement",
+      "Mode",
+      "Retouche",
+      "Studio",
+      "Extérieur",
+      "Photoshop"
+    ],
+    "price": 400,
+    "portrait": "MimiKeel.jpg"
+  },
+  {
+    "id": 930,
+    "firstname": "Isabelle",
+    "lastname": "Lefevre",
+    "title": "Photographe d'Exception - Mode & Publicité",
+    "recommendations": 3,
+    "city": "Marseille",
+    "bio": "Alliant technique professionnelle et sensibilité artistique, je réalise des clichés mettant en valeur l'élégance et l'originalité pour la mode et la publicité. Mon approche innovante apporte une touche contemporaine à chaque projet.",
+    "tags": [
+      "Mode",
+      "Publicité",
+      "Editorial",
+      "Créatif",
+      "Style",
+      "Innovation"
+    ],
+    "price": 420,
+    "portrait": "EllieRoseWilkens.jpg"
+  },
+  {
+    "id": 82,
+    "firstname": "Julien",
+    "lastname": "Martin",
+    "title": "Expert Photographe - Mariages & Reportages",
+    "recommendations": 17,
+    "city": "Lyon",
+    "bio": "Fort de 10 ans d'expérience, j'offre une approche authentique et raffinée pour capturer les moments précieux de vos événements. Spécialisé en reportages et mariages, je crée des images pleines d'émotion et de spontanéité.",
+    "tags": [
+      "Mariage",
+      "Reportage",
+      "Émotion",
+      "Authenticité",
+      "Lumière",
+      "Studio"
+    ],
+    "price": 450,
+    "portrait": "TracyGalindo.jpg"
+  },
+  {
+    "id": 527,
+    "firstname": "Alexandre",
+    "lastname": "Lemoine",
+    "title": "Spécialiste Photo - Nature & Paysages",
+    "recommendations": 5,
+    "city": "Bordeaux",
+    "bio": "Passionné par la nature et les grands espaces, je capture la beauté authentique des paysages. Mon approche immersive permet d'immortaliser des scènes qui invitent à l'évasion et au rêve, en valorisant chaque détail naturel.",
+    "tags": [
+      "Nature",
+      "Paysage",
+      "Outdoor",
+      "Voyage",
+      "Authentique",
+      "Évasion"
+    ],
+    "price": 430,
+    "portrait": "NabeelBradford.jpg"
+  },
+  {
+    "id": 925,
+    "firstname": "Claire",
+    "lastname": "Morel",
+    "title": "Artiste Photographe - Portraits & Créativité",
+    "recommendations": 21,
+    "city": "Toulouse",
+    "bio": "Artiste photographe, je transforme chaque séance en une véritable œuvre d'art. Spécialisée dans les portraits artistiques, je capte vos émotions pour les sublimer en images vibrantes et inspirantes, reflet de votre unicité.",
+    "tags": ["Portrait", "Art", "Créatif", "Inspiration", "Émotion", "Studio"],
+    "price": 410,
+    "portrait": "RhodeDubois.jpg"
+  },
+  {
+    "id": 195,
+    "firstname": "Guillaume",
+    "lastname": "Renaud",
+    "title": "Photographe Événementiel & Corporate",
+    "recommendations": 7,
+    "city": "Paris",
+    "bio": "Fort de 12 ans d'expérience, je capture les moments clés des événements et des entreprises avec une approche professionnelle et dynamique. Mes images mettent en lumière l'essence et l'identité de chaque projet.",
+    "tags": [
+      "Corporate",
+      "Événement",
+      "Portrait",
+      "Dynamique",
+      "Authentique",
+      "Studio"
+    ],
+    "price": 480,
+    "portrait": "MarcelNikolic.jpg"
+  }
+]

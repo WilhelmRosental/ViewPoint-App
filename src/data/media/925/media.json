@@ -1,0 +1,83 @@
+[
+  {
+    "id": 73852953,
+    "photographerId": 925,
+    "title": "8 Rows",
+    "image": "Sport_2000_with_8.jpg",
+    "likes": 52,
+    "date": "2013-02-30",
+    "price": 70
+  },
+  {
+    "id": 92758372,
+    "photographerId": 925,
+    "title": "Fashion Wings",
+    "image": "Fashion_Wings.jpg",
+    "likes": 58,
+    "date": "2018-07-17",
+    "price": 70
+  },
+  {
+    "id": 32958383,
+    "photographerId": 925,
+    "title": "Melody Red on Stripes",
+    "image": "Fashion_Melody_Red_on_Stripes.jpg",
+    "likes": 11,
+    "date": "2019-08-12",
+    "price": 70
+  },
+  {
+    "id": 928587383,
+    "photographerId": 925,
+    "title": "Venture Conference",
+    "image": "Event_VentureConference.jpg",
+    "likes": 2,
+    "date": "2019-01-02",
+    "price": 70
+  },
+  {
+    "id": 725639493,
+    "photographerId": 925,
+    "title": "Product Pitch",
+    "image": "Event_ProductPitch.jpg",
+    "likes": 3,
+    "date": "2019-05-20",
+    "price": 70
+  },
+  {
+    "id": 23394384,
+    "photographerId": 925,
+    "title": "Musical Festival Keyboard",
+    "image": "Event_KeyboardCheck.jpg",
+    "likes": 52,
+    "date": "2019-07-18",
+    "price": 70
+  },
+  {
+    "id": 87367293,
+    "photographerId": 925,
+    "title": "Musical Festival Singer",
+    "image": "Event_Emcee.jpg",
+    "likes": 23,
+    "date": "2018-02-22",
+    "price": 70
+  },
+  {
+    "id": 593834784,
+    "photographerId": 925,
+    "title": "Animal Majesty",
+    "image": "Animals_Majesty.jpg",
+    "likes": 52,
+    "date": "2017-03-13",
+    "price": 70
+  },
+  {
+    "id": 83958935,
+    "photographerId": 925,
+    "title": "Cute puppy on sunset",
+    "video": "Animals_Puppiness.mp4",
+    "likes": 52,
+    "date": "2016-06-12",
+    "price": 70
+  }
+]

@@ -18,18 +18,38 @@ type Media = {
 };
 
 export async function fetchPhotographerData(id: string): Promise<Photographer | null> {
-  const photographers = require('@/app/data/photographers.json').photographers;
-  return photographers.find((p: Photographer) => p.id === parseInt(id)) || null;
+  // Assurez-vous que le chemin du fichier JSON est correct
+  try {
+    const photographers = require('@/app/data/photographers.json').photographers;
+    const photographer = photographers.find((p: Photographer) => p.id === parseInt(id)) || null;
+
+    // Ajout d'une vérification de debug
+    console.log(`Photographer found:`, photographer);
+
+    return photographer;
+  } catch (error) {
+    console.error("Error loading photographers data:", error);
+    return null;
+  }
 }
 
 export async function fetchMediaData(id: string): Promise<Media[]> {
-  const mediaPath = path.join(process.cwd(), 'app', 'data', 'medias', id);
+  // Correction: Next.js accède aux fichiers statiques depuis le dossier public
+  const mediaPath = path.join(process.cwd(), 'public', 'medias', id);
+
   try {
+    // Check if directory exists before trying to read it
+    if (!fs.existsSync(mediaPath)) {
+      console.log(`No media directory found for photographer ${id}. Looking in: ${mediaPath}`);
+      return [];
+    }
+
     const files = fs.readdirSync(mediaPath);
     return files.map((file) => ({
       name: file,
       type: file.endsWith('.mp4') ? 'video' : 'image',
-      url: `/app/data/medias/${id}/${file}`,
+      // Correction: URL relative depuis la racine du domaine (public folder)
+      url: `/medias/${id}/${file}`,
     }));
   } catch (error) {
     console.error(`Error reading media files for photographer ${id}:`, error);

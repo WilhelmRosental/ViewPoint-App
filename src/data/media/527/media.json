@@ -1,0 +1,83 @@
+[
+  {
+    "id": 394583434,
+    "photographerId": 527,
+    "title": "Rocky mountains from the air",
+    "video": "Travel_Rock_Mountains.mp4",
+    "likes": 23,
+    "date": "2017-03-18",
+    "price": 45
+  },
+  {
+    "id": 343423425,
+    "photographerId": 527,
+    "title": "Outdoor Baths",
+    "image": "Travel_Outdoor_Baths.jpg",
+    "likes": 101,
+    "date": "2017-04-03",
+    "price": 45
+  },
+  {
+    "id": 73434243,
+    "photographerId": 527,
+    "title": "Road into the Hill",
+    "image": "Travel_Road_into_Hill.jpg",
+    "likes": 99,
+    "date": "2018-04-30",
+    "price": 45
+  },
+  {
+    "id": 23425523,
+    "photographerId": 527,
+    "title": "Bridge into the Forest",
+    "image": "Travel_Bridge_into_Forest.jpg",
+    "likes": 34,
+    "date": "2016-04-05",
+    "price": 45
+  },
+  {
+    "id": 23134513,
+    "photographerId": 527,
+    "title": "Boat Wonderer",
+    "image": "Travel_Boat_Wanderer.jpg",
+    "likes": 23,
+    "date": "2017-03-18",
+    "price": 45
+  },
+  {
+    "id": 92352352,
+    "photographerId": 527,
+    "title": "Portrait Sunkiss",
+    "image": "Portrait_Sunkissed.jpg",
+    "likes": 66,
+    "date": "2018-05-24",
+    "price": 45
+  },
+  {
+    "id": 34513453,
+    "photographerId": 527,
+    "title": "Shaw Potrait",
+    "image": "Portrait_Shaw.jpg",
+    "likes": 52,
+    "date": "2017-04-21",
+    "price": 45
+  },
+  {
+    "id": 23523533,
+    "photographerId": 527,
+    "title": "Alexandra",
+    "image": "Portrait_Alexandra.jpg",
+    "likes": 95,
+    "date": "2018-11-02",
+    "price": 45
+  },
+  {
+    "id": 525834234,
+    "photographerId": 527,
+    "title": "Afternoon Break",
+    "image": "Portrait_AfternoonBreak.jpg",
+    "likes": 25,
+    "date": "2019-01-02",
+    "price": 45
+  }
+]
