@@ -2,9 +2,10 @@
 
 import type React from "react";
 import { useState, useEffect } from "react";
-import { Search } from "lucide-react";
+import FAQSearch from "../../components/faq/FAQSearch";
+import FAQSidebar from "../../components/faq/FAQSidebar";
+import FAQContent from "../../components/faq/FAQContent";
 
-// Types
 interface FAQItem {
   id: string;
   question: string;
@@ -25,7 +26,6 @@ const FAQPage: React.FC = () => {
   const [filteredFAQs, setFilteredFAQs] = useState<FAQItem[]>([]);
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
-  // Sample FAQ data
   const faqCategories: FAQCategory[] = [
     {
       id: "general",
@@ -160,24 +160,17 @@ const FAQPage: React.FC = () => {
     },
   ];
 
-  // Check if device is mobile
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
-
     handleResize();
     window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Filter FAQs based on search query and active category
   useEffect(() => {
     let filtered = faqItems;
-
     if (searchQuery) {
       filtered = faqItems.filter(
         (item) =>
@@ -187,214 +180,47 @@ const FAQPage: React.FC = () => {
     } else if (activeCategory !== "all") {
       filtered = faqItems.filter((item) => item.category === activeCategory);
     }
-
     setFilteredFAQs(filtered);
   }, [searchQuery, activeCategory]);
 
-  // Toggle FAQ item open/closed
   const toggleQuestion = (id: string) => {
     setOpenQuestions((prev) =>
       prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
     );
   };
 
-  // Handle category change
   const handleCategoryChange = (categoryId: string) => {
     setActiveCategory(categoryId);
     setSearchQuery("");
   };
 
+  const handleReset = () => {
+    setSearchQuery("");
+    setActiveCategory("general");
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-700 py-16 px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Comment pouvons-nous vous aider ?
-        </h1>
-        <p className="text-blue-100 text-lg max-w-2xl mx-auto mb-8">
-          Trouvez rapidement des réponses à vos questions sur notre plateforme
-          de photographie
-        </p>
-
-        {/* Search bar */}
-        <div className="max-w-xl mx-auto relative">
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Rechercher une question..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full py-3 px-4 pl-12 rounded-full border-none shadow-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-            />
-            <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
-              <Search size={20} />
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <FAQSearch searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col md:flex-row gap-8">
-          {/* Categories sidebar */}
           <div className="md:w-1/4">
-            <div className="bg-white rounded-lg shadow-md p-6 sticky top-24">
-              <h2 className="text-xl font-semibold mb-4 text-gray-800">
-                Catégories
-              </h2>
-              <ul className="space-y-2">
-                {faqCategories.map((category) => (
-                  <li key={category.id}>
-                    <button
-                      onClick={() => handleCategoryChange(category.id)}
-                      className={`w-full text-left px-3 py-2 rounded-md transition-colors duration-200 ${
-                        activeCategory === category.id
-                          ? "bg-blue-100 text-blue-700 font-medium"
-                          : "text-gray-600 hover:bg-gray-100"
-                      }`}
-                    >
-                      {category.name}
-                    </button>
-                  </li>
-                ))}
-                <li>
-                  <button
-                    onClick={() => handleCategoryChange("all")}
-                    className={`w-full text-left px-3 py-2 rounded-md transition-colors duration-200 ${
-                      activeCategory === "all"
-                        ? "bg-blue-100 text-blue-700 font-medium"
-                        : "text-gray-600 hover:bg-gray-100"
-                    }`}
-                  >
-                    Toutes les questions
-                  </button>
-                </li>
-              </ul>
-            </div>
+            <FAQSidebar
+              faqCategories={faqCategories}
+              activeCategory={activeCategory}
+              handleCategoryChange={handleCategoryChange}
+            />
           </div>
-
-          {/* FAQ content */}
           <div className="md:w-3/4">
-            {searchQuery ? (
-              <div className="mb-8">
-                <h2 className="text-2xl font-bold text-gray-800 mb-2">
-                  Résultats de recherche
-                </h2>
-                <p className="text-gray-600">
-                  {filteredFAQs.length} résultat(s) pour "{searchQuery}"
-                </p>
-              </div>
-            ) : (
-              <div className="mb-8">
-                <h2 className="text-2xl font-bold text-gray-800 mb-2">
-                  {activeCategory === "all"
-                    ? "Toutes les questions"
-                    : faqCategories.find((c) => c.id === activeCategory)
-                        ?.name || ""}
-                </h2>
-                <p className="text-gray-600">
-                  {activeCategory === "all"
-                    ? "Toutes les questions fréquemment posées"
-                    : faqCategories.find((c) => c.id === activeCategory)
-                        ?.description || ""}
-                </p>
-              </div>
-            )}
-
-            {filteredFAQs.length === 0 ? (
-              <div className="bg-white rounded-lg shadow-md p-8 text-center">
-                <h3 className="text-xl font-medium text-gray-800 mb-2">
-                  Aucun résultat trouvé
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  Nous n'avons pas trouvé de réponse correspondant à votre
-                  recherche.
-                </p>
-                <button
-                  onClick={() => {
-                    setSearchQuery("");
-                    setActiveCategory("general");
-                  }}
-                  className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
-                >
-                  Réinitialiser la recherche
-                </button>
-              </div>
-            ) : (
-              <div className="space-y-4">
-                {filteredFAQs.map((item) => (
-                  <div
-                    key={item.id}
-                    className="bg-white rounded-lg shadow-md overflow-hidden"
-                  >
-                    <button
-                      onClick={() => toggleQuestion(item.id)}
-                      className="w-full text-left p-6 focus:outline-none"
-                    >
-                      <div className="flex justify-between items-center">
-                        <h3 className="text-lg font-medium text-gray-800">
-                          {item.question}
-                        </h3>
-                        <span
-                          className={`transform transition-transform duration-200 ${
-                            openQuestions.includes(item.id) ? "rotate-180" : ""
-                          }`}
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="text-gray-500"
-                          >
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                          </svg>
-                        </span>
-                      </div>
-                    </button>
-
-                    {openQuestions.includes(item.id) && (
-                      <div className="px-6 pb-6 pt-0">
-                        <div className="border-t border-gray-200 pt-4">
-                          <p className="text-gray-600 leading-relaxed">
-                            {item.answer}
-                          </p>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* Contact section */}
-            <div className="mt-12 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg shadow-md p-8">
-              <h2 className="text-xl font-bold text-gray-800 mb-4">
-                Vous n'avez pas trouvé ce que vous cherchiez ?
-              </h2>
-              <p className="text-gray-600 mb-6">
-                Notre équipe de support est disponible pour répondre à toutes
-                vos questions.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="#"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors"
-                >
-                  Contacter le support
-                </a>
-                <a
-                  href="#"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-white text-blue-600 font-medium rounded-md border border-blue-600 hover:bg-blue-50 transition-colors"
-                >
-                  Consulter le guide d'utilisation
-                </a>
-              </div>
-            </div>
+            <FAQContent
+              filteredFAQs={filteredFAQs}
+              searchQuery={searchQuery}
+              activeCategory={activeCategory}
+              faqCategories={faqCategories}
+              openQuestions={openQuestions}
+              toggleQuestion={toggleQuestion}
+              handleReset={handleReset}
+            />
           </div>
         </div>
       </div>
