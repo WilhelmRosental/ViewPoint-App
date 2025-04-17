@@ -1,13 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
-import {
-  Search,
-  MoreVertical,
-  ChevronLeft,
-  MessageCircleIcon as Message,
-} from "lucide-react";
+import { MoreVertical, MessageCircleIcon as Message } from "lucide-react";
 import ConversationsList from "../../components/messages/ConversationsList";
 import ChatWindow from "../../components/messages/ChatWindow";
 

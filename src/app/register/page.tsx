@@ -1,9 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, HelpCircle, MessageSquare } from "lucide-react";
 import HeroSection from "../../components/register/HeroSection";
 import StatsSection from "../../components/register/StatsSection";
 import BenefitsSection from "../../components/register/BenefitsSection";
